@@ -9,6 +9,7 @@ Makefile
 a.out
 aclocal.m4
 autom4te.cache/
+autoconf/
 confdefs.h
 config.log
 config.status
@@ -16,15 +17,25 @@ configure
 openitg
 src/.deps/
 src/Makefile
+src/info.txt
+src/log.txt
 src/archutils/Unix/verinc
 src/config.h
 src/stamp-h1
+src/OpenITG-vs2015.sln
+src/OpenITG-vs2015.vcxproj
+src/OpenITG-vs2015.vcxproj.filters
 version.h
 version.txt
 assets/utilities/itg2-util/src/.deps/
+assets/utilities/itg2-util/compile
+assets/utilities/itg2-util/config.h
+assets/utilities/itg2-util/config.sub
+assets/utilities/itg2-util/stamp-h1
 src/libresample/src/config.h
 src/libresample/tests/testresample
 run
+src/arch/StepMania.xpm
 
 # Visual Studio build artefacts
 *.obj
