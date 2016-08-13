@@ -1,4 +1,3 @@
-/* vim: set noet */
 #define __STDC_CONSTANT_MACROS
 //#include <stdint.h>
 #include "global.h"
@@ -40,6 +39,8 @@ MovieTexture_FFMpeg::MovieTexture_FFMpeg( RageTextureID ID ):
 
 	FixLilEndian();
 
+	decoder = new FFMpeg_Helper;
+
 	m_uTexHandle = 0;
 	m_bLoop = true;
     m_State = DECODER_QUIT; /* it's quit until we call StartThread */
@@ -50,7 +51,6 @@ MovieTexture_FFMpeg::MovieTexture_FFMpeg( RageTextureID ID ):
 	m_Clock = 0;
 	m_FrameSkipMode = false;
 	m_bThreaded = PREFSMAN->m_bThreadedMovieDecode.Get();
-	decoder = NULL;
 }
 
 CString MovieTexture_FFMpeg::Init()
@@ -94,22 +94,21 @@ MovieTexture_FFMpeg::~MovieTexture_FFMpeg()
 	StopThread();
 	DestroyDecoder();
 	DestroyTexture();
+
+	delete decoder;
 }
 
 CString MovieTexture_FFMpeg::CreateDecoder()
 {
-	ASSERT( decoder == NULL );
-	decoder = new FFMpeg_Helper;
-	decoder->RegisterProtocols();
-	return decoder->Open( GetID().filename );
+    decoder->RegisterProtocols();
+    return decoder->Open( GetID().filename );
 }
 
 
 /* Delete the decoder.  The decoding thread must be stopped. */
 void MovieTexture_FFMpeg::DestroyDecoder()
 {
-	decoder->Close();
-	SAFE_DELETE( decoder );
+    decoder->Close();
 }
 
 /* Delete the surface and texture.  The decoding thread must be stopped, and this
@@ -251,6 +250,7 @@ bool MovieTexture_FFMpeg::DecodeFrame()
 		if( sError != "" )
 			RageException::Throw( "Error rewinding stream %s: %s", GetID().filename.c_str(), sError.c_str() );
 
+		decoder->Init();
 		m_Clock = -fDelay;
 		return false;
 	}

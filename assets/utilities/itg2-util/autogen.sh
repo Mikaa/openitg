@@ -3,5 +3,5 @@
 aclocal
 autoconf
 autoheader
-automake --add-missing
-./configure --build=i386-pc-linux-gnu
+automake --add-missing --add-subdir-objects
+./configure --build=x86_64-slackware-linux

@@ -1,4 +1,3 @@
-/* vim: set noet sw=4 ts=4: */
 #ifndef FFMPEG_HELPER
 #define FFMPEG_HELPER
 
@@ -31,7 +30,7 @@ public:
 	void RegisterProtocols();
 	CString Open(CString what);
 	void Close();
-	void RenderFrame(RageSurface *img, int tex_fmt);
+    void RenderFrame(RageSurface *img, int tex_fmt);
 	float GetTimestamp() const;
 	int GetRawFrameNumber();
 
@@ -51,8 +50,7 @@ private:
 	RageFile *m_pFile;
 	avcodec::AVIOContext *m_ioctx;
 	avcodec::AVFormatContext *m_fctx;
-	avcodec::AVCodecContext *m_cctx;
+    avcodec::AVCodecContext *m_cctx;
 	avcodec::AVStream *m_stream;
-	avcodec::SwsContext *m_swsctx;
 };
 #endif // FFMPEG_HELPER

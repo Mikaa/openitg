@@ -26,7 +26,7 @@ LoadingWindow_SDL::LoadingWindow_SDL()
         RageException::Throw( "Couldn't initialize SDL: %s", SDL_GetError() );
 
 	/* Set window title and icon */
-	SDL_WM_SetCaption("Loading StepMania", "");
+	SDL_WM_SetCaption("Loading OpenITG", "");
 
 	CString error;
 	RageSurface *srf = RageSurface_Load_XPM( icon, error );
