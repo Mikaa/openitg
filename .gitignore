@@ -4,12 +4,13 @@
 *.in
 *.so
 *.sw?
+*.deps
+*.log
 .dirstamp
 Makefile
 a.out
 aclocal.m4
 autom4te.cache/
-autoconf/
 confdefs.h
 config.log
 config.status
@@ -17,24 +18,39 @@ configure
 openitg
 src/.deps/
 src/Makefile
-src/info.txt
-src/log.txt
 src/archutils/Unix/verinc
 src/config.h
 src/stamp-h1
-src/OpenITG-vs2015.sln
-src/OpenITG-vs2015.vcxproj
-src/OpenITG-vs2015.vcxproj.filters
 version.h
 version.txt
 assets/utilities/itg2-util/src/.deps/
-assets/utilities/itg2-util/compile
-assets/utilities/itg2-util/config.h
-assets/utilities/itg2-util/config.sub
-assets/utilities/itg2-util/stamp-h1
+src/aes/.deps/
+src/arch/.deps/
+src/crypto/.deps/
+src/ibutton/.deps/
+src/io/.deps/
+src/libresample/src/config.h
 src/libresample/tests/testresample
 run
-src/arch/StepMania.xpm
+
+# IDE artefacts
+OpenITG.kdevelop
+src/StepMania-net2003.sln
+src/StepMania-net2003.vcproj
+src/StepMania-net2008.vcproj
+src/StepMania-net2010.sln
+src/StepMania-net2010.vcxproj
+src/StepMania-net2010.vcxproj.filters
+src/StepMania.dsp
+src/StepMania.dsw
+src/StepMania.mak
+src/StepMania.sln
+src/StepMania.vcproj
+src/StepMania.xpm
+src/StepManiaXbox-2003.sln
+src/StepManiaXbox-2003.vcproj
+src/StepManiaXbox.sln
+src/StepManiaXbox.vcproj
 
 # Visual Studio build artefacts
 *.obj
@@ -52,3 +68,6 @@ Release-SSE2
 # Windows build artefacts
 src/verstub.cpp
 src/version.bin
+
+# linux build artefacts
+OpenITG.kdevelop

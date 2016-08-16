@@ -2,11 +2,11 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT(itg2-util, 1.0, itgpmc@gmail.com)
+AC_INIT([itg2-util, 1.0, itgpmc@gmail.com])
 AC_CANONICAL_SYSTEM
 AC_CONFIG_SRCDIR(src/itg2-decrypt.c)
 AM_CONFIG_HEADER(config.h)
-AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+AM_INIT_AUTOMAKE([AC_PACKAGE_NAME], [AC_PACKAGE_VERSION])
 
 # Checks for programs.
 AC_PROG_CC

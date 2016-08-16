@@ -1,7 +1,18 @@
 #include <stdio.h>
 #include <getopt.h>
+#include <stdlib.h>  // rand(), srand()
+#include <time.h>    // time()
+#include <string.h>  // strcmp()
 #include "keydump.h"
 #include "itg2util.h"
+
+void printHelp( const char *argv0 ) {
+	printf("Usage: %s -f <source file> -w <dest file> [extra args]\n", argv0);
+	printf("\t--decrypt (-d)\tDecrypt mode\n\n");
+	printf("\t--data (-f)\tTreat source file as data file (default)\n");
+	printf("\t--patch (-p)\tTreat source file as patch file\n");
+	printf("\t--static (-s)\tStatic Encryption/Decryption: AES key is in a separate file (required argument as key file)\n\n");
+}
 
 int main(int argc, char **argv) {
 	// direction: 0 = encrypt, 1 = decrypt
@@ -151,12 +162,4 @@ int main(int argc, char **argv) {
 	}
 
 	return 0;
-}
-
-void printHelp( const char *argv0 ) {
-	printf("Usage: %s -f <source file> -w <dest file> [extra args]\n", argv0);
-	printf("\t--decrypt (-d)\tDecrypt mode\n\n");
-	printf("\t--data (-f)\tTreat source file as data file (default)\n");
-	printf("\t--patch (-p)\tTreat source file as patch file\n");
-	printf("\t--static (-s)\tStatic Encryption/Decryption: AES key is in a separate file (required argument as key file)\n\n");
 }
