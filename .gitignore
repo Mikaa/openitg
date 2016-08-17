@@ -68,6 +68,3 @@ Release-SSE2
 # Windows build artefacts
 src/verstub.cpp
 src/version.bin
-
-# linux build artefacts
-OpenITG.kdevelop

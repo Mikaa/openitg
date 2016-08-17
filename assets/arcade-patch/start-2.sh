@@ -7,11 +7,13 @@ umount /proc/bus/usb
 rmmod ub
 rmmod uhci_hcd
 rmmod ohci_hcd
+#rmmod ehci_hcd
 rmmod usbcore
 
 insmod $TOP/modules/usbcore.ko
 modprobe uhci_hcd
 modprobe ohci_hcd
+#modprobe ehci_hcd
 insmod $TOP/modules/ub.ko
 mount /proc/bus/usb
 

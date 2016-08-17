@@ -20,8 +20,8 @@ delete patch-no-songs-dec.zip
 delete patch-no-songs.zip
 
 # ignore all Subversion data
-zip -r patch-dec.zip $DIRS -x \*/.svn/\*
-zip -r patch-no-songs-dec.zip $NO_SONG_DIRS -x \*/.svn/\*
+zip -r patch-dec.zip $DIRS -x \*/.deps/\*
+zip -r patch-no-songs-dec.zip $NO_SONG_DIRS -x \*/.deps/\*
 
 $ENCRYPTER patch-dec.zip patch.zip
 $ENCRYPTER patch-no-songs-dec.zip patch-no-songs.zip
