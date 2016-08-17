@@ -49,7 +49,7 @@ namespace
 void RageFile_png_read( png_struct *png, png_byte *p, png_size_t size )
 {
 	CHECKPOINT;
-	RageFile *f = (RageFile *)  png_get_io_ptr(png); 
+	RageFile *f = (RageFile *) png_get_io_ptr(png);
 
 	int got = f->Read( p, size );
 	if( got == -1 )
